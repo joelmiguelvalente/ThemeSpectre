@@ -9,7 +9,7 @@ componentes.
 
 `Spectre -> Smarty 3.1.31 | Jquery 3.4.1 | Php 7+ `
 
-El theme esta compuesto por:
+El theme tendrá una carpeta adicional:
 ``` HTML
 Modulos -
 	|-- css
