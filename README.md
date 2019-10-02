@@ -38,7 +38,7 @@ Modulos -
 * [LineIcons 460 Iconos](https://lineicons.com/icons/)
 
 CAPTURA:
-
+![Imagen](https://i.imgur.com/v4f1JmT.png)
 DEMO:
 Usuario:   __Demo__
 Contraseña: __demouser__
