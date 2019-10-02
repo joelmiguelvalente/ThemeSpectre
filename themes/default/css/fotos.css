@@ -1,0 +1,190 @@
+.column .pic {
+	width: 100%;
+	margin-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+}
+.column .pic time {
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	font-size: 11px;
+	font-family: monospace;
+}
+.column .pic .pic-header {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.4));
+	padding: 6px;
+	text-shadow: 0 2px 2px #000, 0 -3px 3px #000;
+	font-size: 14px;
+}
+.column .pic .pic-header a {
+	color: #EEE;
+	text-decoration: none;
+}
+.column .pic .pic-header .pic-subtitle,
+.column .pic .pic-header .pic-subtitle a {
+	font-size: 10px;
+	text-decoration: none;
+}
+.column .pic .pic-image {
+	height: 180px;
+}
+.column .pic .pic-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+}
+.picstats {
+	list-style: none;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, 32.666%);
+	grid-gap: 4px;
+	margin-top: -10px;
+}
+.picstats li {
+	display: block;
+	text-align: center;
+}
+.picstats li b {
+	display: block;
+	font-size: 2em;
+}
+/* VER FOTOS */
+#v_album .column {
+	position: relative;
+	margin-bottom: 10px;
+}
+#v_album .column a img {
+	width: 100%;
+	height: 120px;
+	object-fit: cover;
+}
+#v_album .column a .label {
+	position: absolute;
+	left: 8px;
+	top: 0;
+	font-size: 11px;
+	z-index: 2;
+}
+#fg_centro .v_user .avatar-box a img {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 2px;
+}
+#fg_centro .v_info {
+	margin-left: 50px;
+	padding: 3px;
+	position: relative;
+}
+#fg_centro .v_info .user {
+	font-weight: 600;
+	color: #666;
+}
+#fg_centro .v_info .links span {
+	background-repeat: no-repeat;
+	-webkit-background-size: 16px;
+	background-size: 16px;
+	background-position: left center;
+	padding-left: 22px;
+}
+#fg_centro .v_info .links span .icono {
+	font-size: 22px;
+	line-height: 22px;
+}
+#fg_centro #imagen {
+	position: relative;
+	text-align: center;
+	padding: 8px;
+}
+#fg_centro #imagen .herr {
+	display: block;
+	padding: 6px;
+}
+#fg_centro #imagen img {
+	max-width: 60%;
+	min-width: 60%;
+	margin: 0 auto;
+}
+.emptyData {
+	border: 1px solid #CCC;
+	margin-bottom: 10px;
+	background-color: rgba(0,0,0,.2);
+}
+.box ul li {
+	padding: 4px;
+}
+.box ul li b {
+	float: right;
+}
+.imagen-head h2 {
+	font-weight: 500;
+	padding: 3px;
+	margin: 0;
+	font-size: 22px;
+}
+.imagen-head b {
+	font-weight: 300;
+	float: right;
+	margin: 4px;
+}
+.imagen-head p {
+	-ms-word-break: break-word;
+	display: block;
+	padding: 6px;
+	word-break: break-word;
+}
+.infoPost {
+	display: table;
+	width: 100%;
+}
+.infoPost .rateBox,
+.infoPost .metaBox {
+	width: 20%;
+	display: inline-block;
+	float: left;
+}
+.infoPost .rateBox .title,
+.infoPost .metaBox .title {
+	display: block;
+}
+/* No */
+.noComments {
+	background-color: #FDF68B;
+	padding: 10px;
+	text-align: center;	
+	text-transform: uppercase;
+	font-size: 16px;
+	margin: 10px 0;
+}
+.bajo .comments .comentarios-title h4 {
+	margin: 0;
+	padding: 4px;
+}
+.bajo .comments .comentarios-title h4,
+.bajo .comments .comentarios-title h4 span {
+	font-size: 18px;
+}
+#mensajes .item, .form {
+	display: grid;
+	grid-template-columns: 55px 1fr;
+	gap: 10px;
+	position: relative;
+	margin: 8px 0;
+}
+.form.block {
+	display: block;
+}
+#mensajes .item a img, .form img {
+	width: 100%;
+}
+#mensajes .item .firma .options {
+	position: absolute;
+	right: 6px;
+	top: 4px;
+}

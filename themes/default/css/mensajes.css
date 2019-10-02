@@ -1,0 +1,81 @@
+ul, li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.off-message, .mpHistory .main {
+	margin-bottom: 8px;
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	gap: 10px;
+}
+.off-message.unread {
+	background-color: #EFFFC7;
+}
+.off-message .off-canvas-sidebar img,
+.mpHistory .main .autor-image img {
+	width: 100%;
+}
+.off-message .off-canvas-content .content h4,
+.off-message .off-canvas-content .content p,
+.mpRContent .mpHeader h2 {
+	padding: 4px 0;
+	margin: 0;
+}
+.btn-delete {
+	background-color: #F80941;
+	border-color: #F80941;
+	color: #EEE; 
+}
+.btn-delete:hover {
+	background-color: #F80941EE;
+	border-color: #F80941EE;
+	color: #EEE; 
+}
+.mpFooter {
+	padding: 4px;
+	background-color: #EEE;
+}
+/* LEER MENSAJE */
+.mpRContent .mpHeader h2 {
+	margin: 0;
+	padding: 0;
+}
+.mpHistory {
+	margin: 10px 0;
+}
+.mpHistory .main {
+	border: 1px solid #CCC;
+	grid-template-columns: 60px 1fr;
+}
+#mpList .off-message {
+	grid-template-columns: 80px 1fr;
+	position: relative;
+	border: 1px solid #CCC;
+}
+#mpList .off-message .content .action {
+	position: absolute;
+	display: block;
+	width: 200px;
+	right: 10px;
+	text-align: right;
+	top: 10px;
+}
+#mpList .off-message .off-canvas-sidebar {
+	margin: 10px 0;
+	padding: 10px;
+}
+.mpHistory .main .mensaje .rbody div time {
+	float: right;
+	margin: 4px;
+	font-size: 11px;
+	font-style: italic;
+	color: #888;
+} 
+.vacio {
+	background-color: #FDF68B;
+	padding: 10px;
+	text-align: center;	
+	text-transform: uppercase;
+	font-size: 22px;
+}

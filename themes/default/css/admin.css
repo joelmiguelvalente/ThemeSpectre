@@ -1,0 +1,51 @@
+* {
+	list-style: none;
+}
+.boxy-content h1 {
+	font-weight: 300;
+	font-size: 28px;
+	margin: 0;
+	padding: 2px;
+}
+.phpostAlfa {
+	border: 1px solid red;
+	padding: 30px 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #888;
+	font-size: 2em;
+}
+.column .phpost.pointer h1 {
+	border: 1px solid red;
+	display: block;
+	cursor: pointer;
+}
+.column .phpost.pointer h1 > i {
+	float: right;
+	padding: 0px 10px;
+	line-height: 35px;
+}
+.pp_list {
+	margin: 0;
+	padding: 0;
+}
+.pp_list.hide {
+	display: none;
+}
+.pp_list.show {
+	display: block;
+}
+.newTheme .new_themes_risus {
+	padding: 2px;
+}
+.new_themes_risus:nth-child(2n+1) {
+	background-color: #EEE;
+}
+.new_themes_risus .title small {
+	float: right;
+}
+.new_themes_risus .body, 
+.new_themes_risus .body * {
+	font-size: 11px;
+}

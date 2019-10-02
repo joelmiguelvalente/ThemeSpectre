@@ -1,0 +1,194 @@
+.Story_Comments, .commentList, .menu2, #perfil-foto-bar ul,
+.frameForm .options, .frameForm .options li .atta {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.ufiItem,.frameForm .options li, .frameForm .options li .atta li {
+	padding: 0;
+	margin: 0;
+}
+.frameForm {
+	margin-bottom: 14px;
+}
+.attaDesc .shareBtn {
+	margin-top: 6px;
+}
+.frameForm .options {
+	position: relative;
+}
+.frameForm .options li {
+	display: inline-block;
+}
+.frameForm .options li .share,
+.frameForm .options li .atta li .uiComposer .hidden,
+.frameForm .options li .atta .streamLoader {
+	display: none;
+}
+.stream {
+   font-family: LineIcons!important;
+   font-style: normal;
+   font-weight: 400;
+   font-variant: normal;
+   text-transform: none;
+}
+.stream.status::before {
+	content: '\E912';
+}
+.stream.mpub::before {
+	content: '\E99E';
+}
+.stream.mfoto::before {
+	content: '\EAC5';
+}
+.stream.mlink::before {
+	content: '\E935';
+}
+.stream.mvideo::before {
+	content: '\EA81';
+}
+.frameForm .options li .atta .streamLoader {
+	position: absolute;
+	right: 6px;
+	top: 2px;
+}
+.frameForm .options li .atta li {
+	position: relative;
+	padding: 3px 12px;
+}
+.frameForm .options li .atta li .stream {
+	display: inline-block;
+	text-align: center;
+}
+.attaFrame #attaContent .form-group textarea,
+.attaFrame .form-group .wrap textarea {
+	height: 50px;
+}
+.attaFrame #attaContent #fotoFrame,
+.attaFrame #attaContent #enlaceFrame,
+.attaFrame #attaContent #videoFrame {
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+.vContent, .video {
+	display: grid;
+	grid-template-columns: 120px 1fr;
+	gap: 10px;
+}
+.vContent img, .video img {
+	width: 100%;
+	height: 90px;
+	object-fit: cover;
+}
+.commentList {
+	margin-bottom: 6px;
+}
+.commentList .ufiItem .autorPic {
+	float: left;
+	width: 62px;
+	height: 62px;
+	margin: 4px 6px;
+}
+.commentList .ufiItem .autorPic img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10em;
+	object-fit: cover;
+}
+.commentList .ufiItem .close {
+	float: right;
+	margin: 4px;
+	font-size: 11px;
+	font-weight: 700;
+}
+.commentList .ufiItem .mensaje .autorName {
+	display: block;
+	text-transform: capitalize;
+	font-weight: 700;
+	margin-left: 75px;
+	margin-right: 20px;
+}
+.commentList .ufiItem .mensaje .cmInfo {
+	margin-left: 75px;
+	display: block;
+	padding: 3px;
+}
+.commentList .ufiItem .mensaje .cmInfo,
+.commentList .ufiItem .mensaje .cmInfo a{
+	font-size: 12px;
+}
+.commentList .ufiItem .mensaje .cmInfo span:last-child {
+	float: right;
+	margin-top: -4px;
+}
+.newComment .formulario {
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	gap: 10px;
+}
+.newComment .formulario img {
+	width: 100%;
+}
+.newComment .formulario textarea {
+	height: 44px;
+}
+.panel-footer {
+	text-align: center;
+}
+.panel-footer a {
+	margin: 0px 8px;
+	text-decoration: none;
+}
+.panel-footer a i {
+	font-size: 2em;
+}
+.panel .panel-body {
+	display: none;
+} 
+.panel .panel-body.active {
+	display: block;
+} 
+.btn-suspend {
+	background-color: #CE152E;
+	color: #EEE;
+	border-color: #CE152E;
+}
+.foot {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 6px;
+}
+#perfil-foto-bar ul {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap:  10px;
+}
+#perfil-foto-bar ul li a img {
+	width: 100%;
+	height: 100px;
+	object-fit: cover;
+}
+.box {
+	position: relative;
+}
+.box .tab a span {
+	position: absolute;
+	right: 6px;
+	top: 8px;
+}
+.listabox {
+	display: grid;
+	grid-template-columns: repeat(8,1fr);
+	gap: 6px;
+}
+.listabox li a img {
+	width: 100%;
+}
+.mvm .uiPhoto img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+}
