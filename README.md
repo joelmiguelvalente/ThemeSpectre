@@ -9,7 +9,7 @@ componentes.
 
 `Spectre -> Smarty 3.1.31 | Jquery 3.4.1 | Php 7+ `
 
-El theme esta compuesto por:
+El theme tendrá una carpeta adicional:
 ``` HTML
 Modulos -
 	|-- css
@@ -38,7 +38,7 @@ Modulos -
 * [LineIcons 460 Iconos](https://lineicons.com/icons/)
 
 CAPTURA:
-
+![Imagen](https://i.imgur.com/v4f1JmT.png)
 DEMO:
 Usuario:   __Demo__
 Contraseña: __demouser__
