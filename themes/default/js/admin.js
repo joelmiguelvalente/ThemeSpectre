@@ -508,21 +508,48 @@ var ad_afiliado = {
    }
 }
 
-   $.ajax({
-      type: "GET",
-      url: global_data.url + "/feed-themes.php",
-      dataType: "json",
-      success: function(dato) {
-         $('#newTheme').html('');
-         for(var i = 0; i < dato.datos.length; i++){
-            var html = '<li class="new_themes_risus">';
-            html += '<div class="title"><small>Versión: ' + dato.datos[i].version + '</small><a href="' + dato.datos[i].link + '" target="_blank">' + dato.datos[i].name + '</a></div>';
-            html += '<div class="body">Por: <b>' + dato.datos[i].author + '</b> <span>Estado: <b>' + dato.datos[i].status + '</b></span></div>';
-            html += '</li>';
-            $('#newTheme').append(html);
-         }
+$.ajax({
+   type: "GET",
+   url: global_data.url + "/feed-themes.php",
+   dataType: "json",
+   success: function(dato) {
+      $('#newTheme').html('');
+      for(var i = 0; i < dato.datos.length; i++){
+         var html = '<li class="new_themes_risus">';
+         html += '<div class="title"><small>Versión: ' + dato.datos[i].version + '</small><a href="' + dato.datos[i].link + '" target="_blank">' + dato.datos[i].name + '</a></div>';
+         html += '<div class="body">Por: <b>' + dato.datos[i].author + '</b> <span>Estado: <b>' + dato.datos[i].status + '</b></span></div>';
+         html += '</li>';
+         $('#newTheme').append(html);
       }
-   });
+   }
+});
+// NEXT
+$.ajax({
+   type: "GET",
+   url: global_data.url + "/feed-themes.php",
+   dataType: "json",
+   success: function(dato) {
+      $('#version_spectre').html('');
+      if(dato.spectre[0].SCRIPT_VERSION == spectre) {
+         var $MSG = dato.spectre[0].SI;
+         var $class = 'success lni-protection';
+         var $download = '';
+      } else {
+         var $MSG = dato.spectre[0].NO;
+         var $class = 'error lni-inbox';
+         var $download = '<small>' + dato.spectre[0].Descargar + '</small>';
+      }
+      for (var i = 0; i < dato.spectre.length; i++) {
+         var html = '<li>';
+         html += '<div class="body">Versión instalada:</div>';
+         html += '<div><span style="margin-right: 5px;" class="text-'+$class+'" title="' + $MSG + '"></span>';
+         html += '<b>' + dato.spectre[i].SCRIPT_VERSION + '</b></div>';
+         html += $download;
+         html += '</li>';
+         $('#version_spectre').append(html);
+      }
+   }
+});
 $(document).ready(function(){
    /* Más opciones */
    var add = 'Si';

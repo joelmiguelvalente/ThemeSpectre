@@ -108,8 +108,8 @@ header.navbar section {
 	text-align: center;
 	padding-top: 4rem;
 	padding-bottom: 5rem;
-	-webkit-background: radial-gradient(ellipse at bottom, #1D4F8A99 0%, #4B8A9A99 100%), url('../../modulos/img/header.png');
-	background: radial-gradient(ellipse at bottom, #1D4F8A99 0%, #4B8A9A99 100%), url('../../modulos/img/header.png');
+	-webkit-background: radial-gradient(ellipse at bottom, #1D4F8A99 0%, #4B8A9A99 100%), url('../../modulos/img/header.webp');
+	background: radial-gradient(ellipse at bottom, #1D4F8A99 0%, #4B8A9A99 100%), url('../../modulos/img/header.webp');
 	background-repeat: no-repeat;
 	background-position: 0 center;
 	background-attachment: fixed;

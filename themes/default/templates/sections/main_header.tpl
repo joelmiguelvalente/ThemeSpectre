@@ -67,9 +67,11 @@ $(document).ready(function(){
     mensaje.popup({$tsMPs});
     {/if}
     {if $tsNots + $tsMPs}
+    // {literal}
       var favicon = new Favico({
-          animation:'pop'
+         animation:'pop'
       });
+     // {/literal}
       favicon.badge({$tsNots + $tsMPs});
     {/if}
 // {literal}

@@ -59,7 +59,7 @@
                                         </tfoot>
                                     </table><hr />
                                     <input type="button"  onclick="location.href = '{$tsConfig.url}/admin/cats?act=nueva&t=cat'" value="Agregar Nueva Categor&iacute;a" class="mBtn btnOk" style="margin-left:280px;"/>
-                                    <input type="button" style="cursor:pointer;" onclick="location.href = '/admin/cats?act=change'" value="Mover Posts" class="btn_g">									
+                                    <input type="button" style="cursor:pointer;" onclick="location.href = '/admin/cats?act=change'" value="Mover Posts" class="btn btn-primary">									
 									{elseif $tsAct == 'editar'}
                                         <form action="" method="post" autocomplete="off">
                                         <fieldset>
@@ -79,7 +79,7 @@
                                                     </select>
                                                 </dd>
                                             </dl>
-                                            <p><input type="submit" name="save" value="Guardar cambios" class="btn_g"/  ></p>
+                                            <p><input type="submit" name="save" value="Guardar cambios" class="btn btn-primary"/  ></p>
                                         </fieldset>
                                         </form>
                                     {elseif $tsAct == 'nueva'}
@@ -102,7 +102,7 @@
                                                     </select>
                                                 </dd>
                                             </dl>
-                                            <p><input type="submit" name="save" value="Crear Categor&iacute;a" class="btn_g"/></p>
+                                            <p><input type="submit" name="save" value="Crear Categor&iacute;a" class="btn btn-primary"/></p>
                                         </fieldset> 
                                         </form>
                                     {elseif $tsAct == 'borrar'}

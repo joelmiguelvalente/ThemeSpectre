@@ -1,4 +1,4 @@
-<div id="portal_news" class="showHide" status="activo">
+<div id="portal_news" class="showHide lastPosts" status="activo">
    <div id="info" pid="{$tsInfo.uid}"></div>
    <div id="perfil-form" class="widget">
       {include file='modules/m.perfil_muro_form.tpl'}

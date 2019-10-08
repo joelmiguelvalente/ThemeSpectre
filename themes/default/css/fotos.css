@@ -188,3 +188,37 @@
 	right: 6px;
 	top: 4px;
 }
+/* AGREGAR FOTO */
+.encab {
+	display: block;
+	border-bottom: 1px solid #CCC;
+	padding: 4px;
+	font-size: 22px;
+	font-weight: 300;
+}
+#foto_form ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 460px;
+}
+#foto_form .loader {
+	height: 460px;
+	text-align: center;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+#foto_form .loader h2 {
+	display: block;
+}

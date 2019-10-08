@@ -1,10 +1,6 @@
 {include file='sections/main_header.tpl'}
-<link rel="stylesheet" href="{$tsConfig.css}/admin.css">
-<script type="text/javascript">
-// {literal}
-var vScript = '{/literal}{$tsConfig.version}{literal}';
-// {/literal}
-</script>
+<script> var spectre = 'Spectre {VersionTheme}'; </script>
+<link rel="stylesheet" href="{$tsConfig.css}/admin.css?{$smarty.now}">
 <script type="text/javascript" src="{$tsConfig.js}/admin.js?{$smarty.now}"></script>
 <div id="borradores" class="columns">
    <div class="column col-3">

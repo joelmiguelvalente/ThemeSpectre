@@ -53,7 +53,7 @@
                 <dd>
                 <dd>&#<input type="number" id="smile" name="smile" value="{$tsEmoticon.smile}" />;</dd>
             </dl>
-            <p><input type="submit" name="save" value="{if $tsAct == 'editar'}Guardar{else}Agregar{/if} Emoticon" class="btn_g"/></p>
+            <p><input type="submit" name="save" value="{if $tsAct == 'editar'}Guardar{else}Agregar{/if} Emoticon" class="btn btn-primary"/></p>
         </fieldset> 
         </form>                                       
     {/if}

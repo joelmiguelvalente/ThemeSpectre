@@ -203,7 +203,7 @@
                                         </dd>
                                     </dl>
                                     <hr />
-									<input type="button" onclick="$('#tab2').show('slow'); $('#tab1').hide('slow'); $('#b2').css('border','1px solid #4D90FE'); $('#b1').css('border','0px');" value="Continuar" style="width:100px;cursor:default;" class="btn_g"/> 
+									<input type="button" onclick="$('#tab2').show('slow'); $('#tab1').hide('slow'); $('#b2').css('border','1px solid #4D90FE'); $('#b1').css('border','0px');" value="Continuar" style="width:100px;cursor:default;" class="btn btn-primary"/> 
 									</div>									
 									<div id="tab2" style="display:none;">
 										
@@ -306,7 +306,7 @@
 										</fieldset>
 										
                                     <input type="hidden" name="sp" value="{if $tsType == 's'}1{else}0{/if}" />
-                                    <p><input type="submit" name="save" value="Guardar Cambios" class="btn_g"/></p>
+                                    <p><input type="submit" name="save" value="Guardar Cambios" class="btn btn-primary"/></p>
 									</div>
                                 </fieldset>
                                 </form>

@@ -4,7 +4,7 @@
    </ul>
    <div class="columns posts">
       {foreach from=$tsPostsStickys item=p}
-      <div class="column col-6">
+      <div class="column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-6">
          <div class="card"{if $p.post_status == 3} style="background-color:#f1f1f1;"{elseif $p.post_status == 1} style="background-color:coral;"{elseif $p.post_status == 2}style="background-color:rosyBrown;"{elseif $p.user_activo == 0} style="background-color:burlyWood;"{elseif $p.user_baneado == 1} style="background-color:orange;"{/if}>
             <div class="card-header">
                <div class="card-title h5" {if $p.post_status == 3}class="tooltip" title="El post est&aacute; en revisi&oacute;n"{elseif $p.post_status == 1}class="tooltip" title="El post se encuentra en revisi&oacute;n por acumulaci&oacute;n de denuncias"{elseif $p.post_status == 2}class="tooltip" title="El post est&aacute; eliminado"{elseif $p.user_activo == 0}class="tooltip" title="La cuenta del usuario est&aacute; desactivada"{/if}>{if $p.post_sponsored == 1}<i class="lni-target-audience"></i> {/if}{$p.post_title}</div>
@@ -28,7 +28,7 @@
    </ul>
    <div class="columns posts">
       {foreach from=$tsPosts item=p}
-      <div class="column col-6">
+      <div class="column col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-6">
          <div class="card" style="{if $p.post_status == 3} background-color:#f1f1f1; {elseif $p.post_status == 1}background-color:coral;{elseif $p.post_status == 2} background-color:rosyBrown;{elseif $p.user_activo == 0} background-color:burlyWood;{elseif $p.user_baneado == 1} background-color:orange;{/if}">
             <div class="card-header">
                <div class="card-title h5" {if $p.post_status == 3}class="tooltip" title="El post est&aacute; en revisi&oacute;n"{elseif $p.post_status == 1}class="tooltip" title="El post se encuentra en revisi&oacute;n por acumulaci&oacute;n de denuncias"{elseif $p.post_status == 2}class="tooltip" title="El post est&aacute; eliminado"{elseif $p.user_activo == 0}class="tooltip" title="La cuenta del usuario est&aacute; desactivada"{elseif $p.user_baneado == 1}class="tooltip" title="La cuenta del usuario est&aacute; suspendida"{/if} >{if $p.post_sponsored == 1}<i class="lni-target-audience"></i> {/if}{$p.post_title}</div>

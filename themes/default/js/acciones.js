@@ -153,240 +153,19 @@ function actualizar_comentarios(cat, nov){
 	});
 }
 
-/* Eliminar Comentario */
-function borrar_com(comid, autor, postid, gew){
-	mydialog.close();
-   if(!postid) var postid = gget('postid');
-	if(!gew){
-      mydialog.show();
-		mydialog.title('Borrar Comentarios');
-		mydialog.body('&#191;Quiere eliminar este comentario?');
-		mydialog.buttons(true, true, 'S&iacute;', 'borrar_com(' + comid + ', ' + autor + ', ' + postid + ', 1)', true, false, true, 'No', 'close', true, true);
-		mydialog.center();
-	} else {
-      $('#loading').fadeIn(250);
-		$.ajax({
-			type: 'POST',
-			url: global_data.url +'/comentario-borrar.php',
-			data: 'comid=' + comid + '&autor=' + autor + '&postid=' + postid,
-			success: function(h){
-				switch(h.charAt(0)){
-					case '0': //Error
-						mydialog.alert('Error', h.substring(3));
-					break;
-					case '1':
-						// RESTAMOS
-						var ncomments = parseInt($('#ncomments').text());
-						$('#ncomments').text(ncomments - 1);
-						//
-	               $('#div_cmnt_'+comid).slideUp( 1500, 'easeInOutElastic');
-						$('#div_cmnt_'+comid).slideUp('normal', function(){ $(this).remove(); });
-	               $('#loading').fadeOut(350);
-					break;
-				}
-			},
-			error: function(){
-				mydialog.error_500("borrar_com('"+comid+"')");
-	            $('#loading').fadeOut(350);
-			}
-		});
-	}
-}
-/* Ocultar Comentario */
-function ocultar_com(comid, autor, postid){
-	mydialog.close();
-   $('#loading').fadeIn(250);
-	$.ajax({
-		type: 'POST',
-		url: global_data.url +'/comentario-ocultar.php',
-		data: 'comid=' + comid + '&autor=' + autor + '&post_id=' + postid + gget('postid'),
-		success: function(h){
-			switch(h.charAt(0)){
-				case '0': //Error
-					mydialog.alert('Error', h.substring(3));
-					break;
-				case '1':
-					//
-					$('#comentario_' +comid).css('opacity', 1);
-					$('#pp_' +comid).css('opacity', 0.5);
-					break;
-				case '2':
-					//
-					$('#comentario_' +comid).css('opacity', 0.5);
-					$('#pp_' +comid).css('opacity', 1);
-					break;
-			}
-            $('#loading').fadeOut(350);
-		},
-		error: function(){
-			mydialog.error_500("borrar_com('"+comid+"')");
-		}
-	});
-}
 
-function procesando(name, clean){
-	if(clean){
-		proc[name] = false;
-		return true;
-	}
-	if(proc[name])
-		return true;
-	else{
-		proc[name] = true;
-		return false;
-	}
-}
-/* Borrar Post */
-function borrar_post(aceptar){
-	if(!aceptar){
-			mydialog.show();
-			mydialog.title('Borrar Post');
-			mydialog.body('&iquest;Seguro que deseas borrar este post?');
-			mydialog.buttons(true, true, 'SI', 'borrar_post(1)', true, false, true, 'NO', 'close', true, true);
-			mydialog.center();
-			return;
-	}else if(aceptar==1){
-			mydialog.show();
-			mydialog.title('Borrar Post');
-			mydialog.body('Te pregunto de nuevo... &iquest;Seguro que deseas borrar este post?');
-			mydialog.buttons(true, true, 'SI', 'borrar_post(2)', true, false, true, 'NO', 'close', true, true);
-			mydialog.center();
-			return;
-	}
-	mydialog.procesando_inicio('Eliminando...', 'Borrar Post');
-    $('#loading').fadeIn(250);
-	$.ajax({
-		type: 'POST',
-		url: global_data.url + '/posts-borrar.php',
-		data: gget('postid', true),
-		success: function(h){
-			switch(h.charAt(0)){
-				case '0': //Error
-					mydialog.alert('Error', h.substring(3));
-					break;
-				case '1':
-					mydialog.alert('Post Borrado', h.substring(3), true);
-					break;
-			}
-            $('#loading').fadeOut(350);
-		},
-		error: function(){
-			mydialog.error_500("borrar_post(2)");
-            $('#loading').fadeOut(350);
-		},
-		complete: function(){
-			mydialog.procesando_fin();
-            $('#loading').fadeOut(350);
-		}
-	});
-}
 
-/* Votar post */
-var votar_post_votado = false;
-function show_votar_post(force_hide){
-	if(votar_post_votado)
-		return;
-	if(!force_hide && $('.post-metadata .dar_puntos').css('display') == 'none')
-		$('.post-metadata .dar_puntos').show();
-	else
-		$('.post-metadata .dar_puntos').hide();
-}
-function votar_post(puntos){
-	if(votar_post_votado)
-		return;
-    if(puntos == null || isNaN(puntos) != false || puntos < 1) {
-		mydialog.alert('Error', 'Debe introducir n&uacute;meros');
-        return false;
-    }
-	votar_post_votado = true;
-    $('#loading').fadeIn(250);
-	$.ajax({
-		type: 'POST',
-		url: global_data.url + '/posts-votar.php',
-		data: 'puntos=' + puntos + gget('postid'),
-		success: function(h){
-			show_votar_post(true);
-			$('.dar-puntos').slideUp();
-			switch(h.charAt(0)){
-				case '0': //Error
-					$('.post-metadata .toast').addClass('toast-error').html(h.substring(3)).slideDown();
-					break;
-				case '1': //OK
-					$('.post-metadata .toast').addClass('toast-success').html(h.substring(3)).slideDown();
-					$('#puntos_post').html(number_format(parseInt($('#puntos_post').html().replace(".", "")) + parseInt(puntos), 0, ',', '.'));
-					break;
-			}
-            $('#loading').fadeOut(350);
-		},
-		error: function(){
-			votar_post_votado = false;
-			mydialog.error_500("votar_post('"+puntos+"')");
-            $('#loading').fadeOut(350);
-		}
-	});
-}
 
-/* Agregar post a favoritos */
-var add_favoritos_agregado = false;
-function add_favoritos(){
-	if(add_favoritos_agregado)
-		return;
-	if(!gget('key')){
-		mydialog.alert('Login', 'Tienes que estar logueado para realizar esta operaci&oacute;n');
-		return;
-	}
-	add_favoritos_agregado = true;
-    $('#loading').fadeIn(250);
-	$.ajax({
-		type: 'POST',
-		url: global_data.url + '/favoritos-agregar.php',
-		data: gget('postid', true),
-		success: function(h){
-			switch(h.charAt(0)){
-				case '0': //Error
-					$('.post-metadata .toast').addClass('toast-error').html(h.substring(3)).slideDown();
-					break;
-				case '1': //OK
-					$('.post-metadata .toast').addClass('toast-success').html(h.substring(3)).slideDown();
-					$('.favoritos_post').html(number_format(parseInt($('.favoritos_post').html().replace(".", "")) + 1, 0, ',', '.'));
-					break;
-			}
-            $('#loading').fadeOut(350);
-		},
-		error: function(){
-			add_favoritos_agregado = false;
-			mydialog.error_500("add_favoritos()");
-            $('#loading').fadeOut(250);
-		}
-	});
-}
+
+
+
+
+
+
 
 function error_avatar(obj, id, size){
 	if (typeof id == 'undefined' || typeof size == 'undefined') obj.src = global_data.img + 'images/avatar.gif';
 	else obj.src = global_data.img + 'images/a'+ size + '_' + (id % 10) + '.jpg';
-}
-
-
-function menu(section, href){ //Simple Click
-	if(menu_section_actual != section){
-		$('#tabbed'+menu_section_actual).removeClass('here');
-		$('#tabbed'+section).addClass('here');
-	}
-	menu_section_actual = section;
-	window.location = href;
-	return true;
-}
-function menu2(section, href){ //Con DobleClick
-	if(menu_section_actual == section){
-		window.location = href;
-		return true;
-	}else{
-		$('#tabbed'+menu_section_actual).removeClass('here');
-		$('#tabbed'+section).addClass('here');
-		$('#subMenu'+menu_section_actual).fadeOut('fast');
-		$('#subMenu'+section).fadeIn('fast');
-	}
-	menu_section_actual = section;
 }
 
 function set_checked(obj){
@@ -396,11 +175,10 @@ function is_checked(obj){
 	return document.getElementById(obj) && document.getElementById(obj).checked;
 }
 
-
 /* Change Country */
 function change_country(prefix){
 	var site = global_data.ts_domain;
-	document.cookie='site_prefix='+prefix+';expires=Thu, 26 Dec 2019 16:12:48 GMT;path=/;domain=.'+site;
+	document.cookie='site_prefix='+prefix+';expires=Thu, 26 Dec 2020 16:12:48 GMT;path=/;SameSite=None;domain=.'+site;
 	if(prefix=='la')
 		prefix = 'www';
 	window.location = 'http://'+prefix+'.'+site;
@@ -555,11 +333,9 @@ function edad(mes, dia, anio){
 	return years;
 }
 
-
 function my_number_format(numero){
 	return Number(numero).toLocaleString();
 }
-
 function bloquear(user, bloqueado, lugar, aceptar){
 	if(!aceptar && bloqueado){
 		mydialog.show();
@@ -802,7 +578,6 @@ document.onkeydown = function(e){
 
 
 $(document).ready(function(){
-
 	$('body').click(function(e){ 
 	   if ($('#mon_list').css('display') != 'none' && $(e.target).closest('#mon_list').length == 0 && $(e.target).closest('a[name=Monitor]').length == 0) notifica.last();
       if ($('#mp_list').css('display') != 'none' && $(e.target).closest('#mp_list').length == 0 && $(e.target).closest('a[name=Mensajes]').length == 0) mensaje.last(); 
@@ -1322,49 +1097,6 @@ var timelib = {
 
 function brand_day(enable) {
 	var site = global_data.domain;
-	document.cookie = 'brandday='+(enable ? 'on' : 'off')+';expires=Tue, 25 May 2010 00:00:00 GMT-3;path=/;domain=.'+site;
+	document.cookie = 'brandday='+(enable ? 'on' : 'off')+';expires=Tue, 25 May 2020 00:00:00 GMT-3;path=/;SameSite=None;domain=.'+site;
 	window.location.reload();
 }
-
-
-/* extras */
-function emoticones(){ 
-	var winpops=window.open(global_data.url + "/emoticones.php","","width=180px,height=500px,scrollbars,resizable");
-}
-// POST COMMENTS
-	function com_page(postid, page, autor){
-		$('#com_gif').show();
-        $('#loading').fadeIn(250);
-		//
-		$.ajax({
-			type: 'POST',
-			url: global_data.url + '/comentario-ajax.php?page=' + page,
-			data: 'postid=' + postid + '&autor=' + autor,
-			success: function(h){
-				$('#comentarios').html(h);
-				//
-				set_pages(postid, page, autor);
-				//
-                $('#loading').fadeOut(350);
-                //
-			}
-		});
-		//
-		return false;
-	}
-	// PAGINAS PARA LOS COMENTARIOS EN POSTS
-	function set_pages(postid, page, autor){
-		var total = parseInt($('#ncomments').text());
-		//
-        $('#loading').fadeIn(250);
-		$.ajax({
-			type: 'POST',
-			url: global_data.url + '/comentario-pages.php?page=' + page,
-			data: 'postid=' + postid + '&autor=' + autor + '&total=' + total,
-			success: function(h){
-				$('.paginadorCom').html(h);
-				$('#com_gif').fadeOut();
-                $('#loading').fadeOut(350);
-			}
-		});
-	}

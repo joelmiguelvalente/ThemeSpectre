@@ -156,7 +156,7 @@
 										</dd>
 									</dl>	
 											<hr />
-										 {if $tsAct == 'nueva'}<p><input type="submit" name="save" value="Crear medalla" class="btn_g"/></p>{else}<p><input type="submit" name="edit" value="Guardar" class="btn_g"/>{/if}
+										 {if $tsAct == 'nueva'}<p><input type="submit" name="save" value="Crear medalla" class="btn btn-primary"/></p>{else}<p><input type="submit" name="edit" value="Guardar" class="btn btn-primary"/>{/if}
 										</fieldset>
 										</form>
 									{/if}

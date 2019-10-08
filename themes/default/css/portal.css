@@ -1,0 +1,79 @@
+@import 'perfil.css';
+.box .box_cuerpo {
+	padding: 4px;
+}
+.box .tab .tab-item .click {
+	margin-top: 10px;
+}
+.afiliados li {
+	margin-bottom: 4px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: #EEE;
+}
+.afiliados li a {
+	display: block;
+	height: 60px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+.afiliados li a img {
+	height: 100%;
+}
+.lastPosts .header .box_txt,
+#last-activity-view-more {
+	padding: 6px;
+	font-weight: 700;
+	margin-bottom: 4px;
+	background-color: #EEE;
+	text-align: center;
+}
+.lastPosts .header .box_txt a {
+	float: right;
+	font-size: 24px;
+}
+.date-sep h3 {
+	font-weight: 300;
+	font-size: 22px;
+	border-bottom: 1px solid #CCC;
+	margin-top: 10px;
+}
+.date-sep .tile .tile-icon .avatar,
+.date-sep .tile .tile-icon .avatar img {
+	border-radius: 5px;
+	width: 40px;
+	height: 40px;
+}
+#config_inputs {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap: 10px;
+}
+#config_inputs .form-group {
+	padding: 0;
+	margin: 0;
+}
+.lastPosts .body ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.lastPosts .body ul .categoriaPost {
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 28px;
+}
+.lastPosts .body ul .categoriaPost .title {
+	display: block;
+}
+.lastPosts .body ul .categoriaPost span,
+.lastPosts .body ul .categoriaPost strong,
+.lastPosts .body ul .categoriaPost span a {
+	font-size: 12px;
+}
+.lastPosts .body ul .categoriaPost .floatR {
+	float: right;
+} 

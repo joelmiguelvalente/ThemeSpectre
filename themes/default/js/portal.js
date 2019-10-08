@@ -5,8 +5,8 @@ var portal = {
     cache: {},
     load_tab:function(type, obj){
         // CSS
-        $('#tabs_menu > li').removeClass('selected');
-        $(obj).parent().addClass('selected');
+        $('#tabs_menu > li').removeClass('active');
+        $(obj).parent().addClass('active');
         if(type == 'news') $('#portal_content').css('background-color', '#FFF');
         else $('#portal_content').css('background-color', '#F9F9F9');
         //

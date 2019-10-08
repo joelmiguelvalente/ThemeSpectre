@@ -1,5 +1,5 @@
 <section class="navbar-section">
-   {if $tsPage == '' || $tsPage == 'home' || $tsPage == 'posts' || $tsPage == 'admin'}
+   {if $tsPage == 'home' || $tsPage == 'portal'}
       <a class="btn btn-link{if $tsPage == 'home' || $tsPage == 'portal'} text-success{/if}" title="Inicio" href="{$tsConfig.url}/{if $tsPage == 'home' || $tsPage == 'posts'}posts/{/if}">Inicio</a>
       <a class="btn btn-link{if $tsPage == 'buscador'} text-success{/if}" title="Buscador" href="{$tsConfig.url}/buscador/">Buscador</a>
       {if $tsUser->is_member}
@@ -11,7 +11,8 @@
             <a class="btn btn-link{if $tsPage == 'moderacion'} text-success{/if}" title="Panel de Moderador" href="{$tsConfig.url}/moderacion/">Moderaci&oacute;n {if $tsConfig.c_see_mod && $tsConfig.novemods.total}<span class="cadGe cadGe_{if $tsConfig.novemods.total < 10}green{elseif $tsConfig.novemods.total < 30}purple{else}red{/if}" style="position:relative;">{$tsConfig.novemods.total}</span>{/if}</a>
          {/if}
       {/if}
-   {elseif $tsPage == 'fotos'}
+   {/if}
+   {if $tsPage == 'fotos'}
       <a class="btn btn-link{if $tsAction == '' && $tsAction != 'agregar' && $tsAction != 'album' && $tsAction != 'favoritas' || $tsAction == 'ver'} text-success{/if}" href="{$tsConfig.url}/fotos/">Inicio</a>
       {if $tsAction == 'album' && $tsFUser.0 != $tsUser->uid}
          <a class="btn btn-link text-success" href="{$tsConfig.url}/fotos/{$tsFUser.1}">&Aacute;lbum de {$tsFUser.1}</a>
@@ -20,7 +21,8 @@
          <a class="btn btn-link{if $tsAction == 'agregar'} text-success{/if}" href="{$tsConfig.url}/fotos/agregar.php">Agregar Foto</a>
       {/if}
          <a class="btn btn-link{if $tsAction == 'album' && $tsFUser.0 == $tsUser->uid} text-success{/if}" href="{$tsConfig.url}/fotos/{$tsUser->nick}">Mis Fotos</a>
-   {elseif $tsPage == 'tops'}
+   {/if}
+   {if $tsPage == 'tops'}
       <a class="btn btn-link{if $tsAction == 'posts'} text-success{/if}" href="{$tsConfig.url}/top/posts/">Posts</a>
       <a class="btn btn-link{if $tsAction == 'usuarios'} text-success{/if}" href="{$tsConfig.url}/top/usuarios/">Usuarios</a>
       <a class="btn btn-link{if $tsAction == 'fotos'} text-success{/if}" href="{$tsConfig.url}/top/fotos/">Fotos</a>

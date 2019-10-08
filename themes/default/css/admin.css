@@ -8,7 +8,6 @@
 	padding: 2px;
 }
 .phpostAlfa {
-	border: 1px solid red;
 	padding: 30px 0;
 	text-align: center;
 	text-transform: uppercase;
@@ -17,7 +16,7 @@
 	font-size: 2em;
 }
 .column .phpost.pointer h1 {
-	border: 1px solid red;
+	background-color: #EEE;
 	display: block;
 	cursor: pointer;
 }
@@ -48,4 +47,48 @@
 .new_themes_risus .body, 
 .new_themes_risus .body * {
 	font-size: 11px;
+}
+.column .card {
+	margin-bottom: 10px;
+}
+.column .card .card-header,
+.column .card .card-body {
+	padding: 4px;
+	margin: 0;
+}
+.column .card .card-body p {
+	padding: 2px 6px;
+	margin: 0;
+}
+.boxy-content .mensajes {
+	display: block;
+	text-align: center;
+	padding: 8px;
+}
+.boxy-content .mensajes.ok {
+	background-color: #68DA8B
+}
+.boxy-content .mensajes.error {
+	background-color: #DA6868
+}
+.boxy-content form fieldset {
+	padding: 10px;
+	margin: 0;
+}
+.boxy-content form fieldset legend {
+	margin-bottom: -20px;
+}
+.boxy-content form fieldset dl {
+	border: 1px solid red;
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 6px;
+}
+.boxy-content form fieldset dl dt span {
+	display: block;
+}
+.boxy-content form fieldset dl dt span,
+.boxy-content form fieldset dl dt span a {
+	font-weight: 300;
+	font-size: 12px;
 }
