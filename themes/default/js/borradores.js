@@ -50,7 +50,7 @@ var borradores = {
 		$('ul#borradores-categorias li#todas span.count').html(this.counts['todos']);
 		$.each(this.counts['categorias'], function(categoria, data){
 			if(printCategorias)
-				$('ul#borradores-categorias').append('<li id="' + categoria + '"><span class="cat-title"><a href="" onclick="borradores.active(this); borradores.categoria = \'' + categoria + '\'; borradores.query(); return false;">' + data['name'] + '</a></span> <span class="count">' + data['count'] + '</span></li>');
+				$('ul#borradores-categorias').append('<li class="nav-item" id="' + categoria + '"><span class="cat-title"><a href="" onclick="borradores.active(this); borradores.categoria = \'' + categoria + '\'; borradores.query(); return false;">' + data['name'] + '</a></span> <span class="float-right label label-error count">' + data['count'] + '</span></li>');
 			else
 				$('ul#borradores-categorias li#' + categoria + ' span.count').html(data['count']);
 		});

@@ -754,3 +754,54 @@ textarea::placeholder {
 	padding: 2px;
 	text-decoration: none;
 }
+/* BORRADORES */
+.boxy {
+	position: relative;
+}
+.boxy .boxytitle,
+.boxy .box-header {
+	border-bottom: 1px solid #CCC;
+	padding: 4px;
+}
+.boxy .boxytitle h3,
+.boxy .box-header,
+.boxy h4,.boxy ul,
+#resultados-borradores {
+	margin: 0;
+	padding: 0;
+}
+.boxy h4 {
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	background-color: #EEE;
+}
+.boxy .form-group {
+	position: absolute;
+	right: 0;
+	top: 2px;
+	width: 300px;
+}
+#resultados-borradores {
+	list-style: none;
+}
+#resultados-borradores li {
+	padding: 4px;
+}
+#resultados-borradores li a {
+	display: block;
+}
+#resultados-borradores li a.borrar {
+	float: right;
+	margin-top: -20px;
+}
+#resultados-borradores li a img {
+	float: left;
+	margin: 8px 6px;
+}
+#resultados-borradores li .gray {
+	color: #888;
+	display: block;
+	font-size: 14px;
+	font-style: italic;
+}
