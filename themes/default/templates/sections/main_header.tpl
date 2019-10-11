@@ -33,7 +33,6 @@
 <script src="{$tsConfig.js}/jquery.plugins.js?{$smarty.now}" type="text/javascript"></script>
 <script src="{$tsConfig.js}/acciones.js?{$smarty.now}" type="text/javascript"></script>
 <script src="{$tsConfig.js}/funciones.js?{$smarty.now}" type="text/javascript"></script>
-<script src="{$tsConfig.tema.t_url}/wysibb/wysibb_smile.js?{$smarty.now}" type="text/javascript"></script>
 <script src="{$tsConfig.tema.t_url}/wysibb/wysibb.js?{$smarty.now}" type="text/javascript"></script>
 {if $tsUser->is_admod || $tsUser->permisos.moacp || $tsUser->permisos.most || $tsUser->permisos.moayca || $tsUser->permisos.mosu || $tsUser->permisos.modu || $tsUser->permisos.moep || $tsUser->permisos.moop || $tsUser->permisos.moedcopo || $tsUser->permisos.moaydcp || $tsUser->permisos.moecp}
 <script src="{$tsConfig.js}/moderacion.js" type="text/javascript"></script>
