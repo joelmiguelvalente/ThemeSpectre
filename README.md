@@ -61,9 +61,8 @@ y debajo pegan esta
     include 'modulos/spectre.php';
 ```
 
-Va a existir 2 versiones
-1 - Si comienzan desde cero *tendrá los Smiles en formato texto* sin Emoticones
-2 - Si ya es una web con datos *tendrá los Emoticones por defectos* sin Smiles
+Se integró **PHPMailer**
+[ver configuración](https://github.com/joelmiguelvalente/PhpMailerForPhpostRisus)
 
 Si ya tienen una web hagan este paso:
 Buscar en __config.inc.php__ y borran esto
