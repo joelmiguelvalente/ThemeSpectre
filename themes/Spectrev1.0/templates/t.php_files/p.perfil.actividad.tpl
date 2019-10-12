@@ -4,7 +4,7 @@
     <div class="widget big-info clearfix">
         <div class="title-w clearfix">
 			<h3>&Uacute;ltima actividad de {$tsUsername}</h3>
-			<select onchange="actividad.cargar({$tsUserID},'filtrar', this.value)" id="last-activity-filter">
+			<select class="form-select" onchange="actividad.cargar({$tsUserID},'filtrar', this.value)" id="last-activity-filter">
 				<option value="0">Todas</option>
                 <option value="1">Post nuevo</option>
                 <option value="2">Post favorito</option>

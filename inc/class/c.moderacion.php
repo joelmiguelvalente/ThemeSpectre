@@ -120,34 +120,34 @@ class tsMod {
         $data['muro'] = result_array($query);
         $data['m_total'] = count($data['muro']);
         
-        //
+        // USUARIO
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT user_id, user_name, user_last_ip, user_lastlogin, user_lastactive FROM u_miembros WHERE ' .
             ($tipo == 1 ? 'user_last_ip' : 'user_name') . ' ' . $met .
             ' ORDER BY user_lastactive DESC');
         $data['usuarios'] = result_array($query);
         $data['u_total'] = count($data['usuarios']);
         
-        //
+        // POSTS
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT p.post_id, p.post_user, p.post_title, p.post_date, p.post_ip, u.user_name, c.c_nombre, c.c_seo, c.c_img FROM p_posts AS p LEFT JOIN u_miembros AS u ON p.post_user = u.user_id LEFT JOIN p_categorias AS c ON c.cid = p.post_category WHERE ' .
             ($tipo == 1 ? 'p.post_ip ' . $met . '' : 'p.post_title ' . $met .
             ' OR p.post_body ' . $met));
         $data['posts'] = result_array($query);
         $data['p_total'] = count($data['posts']);
         
-        //
+        // FOTOS
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT f.foto_id, f.f_title, f.f_user, f.f_date, f.f_ip, u.user_name FROM f_fotos AS f LEFT JOIN u_miembros AS u ON f.f_user = u.user_id WHERE ' .
             ($tipo == 1 ? 'f.f_ip ' . $met . '' : 'f.f_title ' . $met .
             ' OR f.f_description ' . $met));
         $data['fotos'] = result_array($query);
         $data['f_total'] = count($data['fotos']);
         
-        //
+        // COMENTARIOS POSTS
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT u.user_id, u.user_name, c.* FROM p_comentarios AS c LEFT JOIN u_miembros AS u ON u.user_id = c.c_user WHERE ' .
             ($tipo == 1 ? 'c.c_ip ' . $met . '' : 'c.c_user ' . $met . ' OR c.c_body ' . $met));
         $data['p_comentarios'] = result_array($query);
         
         $data['c_p_total'] = count($data['p_comentarios']);
-        //
+        // COMENTARIOS FOTOS
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT u.user_id, u.user_name, f.* , c.* FROM f_comentarios AS c LEFT JOIN u_miembros AS u ON u.user_id = c.c_user LEFT JOIN f_fotos AS f ON f.foto_id = c.c_foto_id WHERE ' .
             ($tipo == 1 ? 'c.c_ip ' . $met . '' : 'c.c_user ' . $met . ' OR c.c_body ' . $met));
         $data['f_comentarios'] = result_array($query);

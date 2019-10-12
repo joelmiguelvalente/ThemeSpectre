@@ -1,0 +1,42 @@
+.monigrid {
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	gap:10px;
+}
+.monigrid .card .imagen_user {
+	text-align: center;
+	width: 120px;
+	height: 120px;
+	border-radius: 10em;
+	margin: 10px auto;
+	position: relative;
+}
+.monigrid .card .imagen_user img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10em;
+	object-fit: cover;
+}
+.monigrid .card .imagen_user[data-usuario]::after {
+	height: 0;
+	overflow: hidden;
+	transition: all .3s ease-in;
+}
+
+.monigrid .card .imagen_user[data-usuario]:hover::after{
+	background-color: #33333399;
+	content: attr(data-usuario);
+	width: 100%;
+	height: 100%;
+	transition: all .3s ease-in;
+	color: #EEE;
+	position:absolute;
+	border-radius: 10em;
+	left: 0;
+	top: 0;
+	z-index:9;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}

@@ -13,7 +13,7 @@ class tsSwat{
     /*
         setDenuncia()
     */
-    function setDenuncia($obj_id, $type = 'posts'){
+    function setDenuncia($obj_id = NULL, $type = 'posts'){
         global $tsCore, $tsUser;
         // VARS
         $razon = $tsCore->setSecure($_POST['razon']);

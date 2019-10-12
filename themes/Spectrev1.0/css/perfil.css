@@ -192,3 +192,83 @@
 	height: 200px;
 	object-fit: cover;
 }
+.widget {
+	position: relative;
+}
+.widget .title-w {
+	background-color: #EEE;
+}
+.widget .title-w h3,
+.widget .last-activity .date-sep h3,
+#last-activity-view-more {
+	margin: 0;
+	padding: 6px;
+	font-size: 22px;
+}
+.widget .title-w select {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 200px;
+}
+.widget .last-activity .date-sep h3 {
+	text-transform: uppercase;
+	font-weight: 300;
+	font-size: 18px;
+	padding: 5px;
+	margin-top: 6px;
+	background-color: #EEECCC;
+}
+.widget .last-activity .date-sep .sep {
+	border-bottom: 1px solid #CCC;
+	padding: 10px;
+}
+.widget .last-activity .date-sep .sep .ac_content .remove {
+	float: right;
+	color: #F00;
+	margin-right: 6px;
+}
+.widget .last-activity .date-sep .sep .time {
+	font-style: italic;
+	color: #888;
+	display: block;
+	margin-top: -8px;
+	padding-left: 6px;
+}
+#last-activity-view-more {
+	font-size: 16px;
+}
+#last-activity-view-more a {
+	display: block;
+	text-align: center;
+	background-color: #CCC;
+	padding: 8px;
+	color: #333;
+}
+.widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.widget ul li {
+	padding: 6px;
+}
+.widget ul li.sep h4 {
+	margin: 0;
+	padding: 4px;
+	background-color: #EEE;
+}
+.widget ul li label {
+	margin-right: 6px;
+}
+.widget ul.ultimos .categoriaPost {
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	padding-left: 30px;
+}
+.widget ul.ultimos .categoriaPost:nth-child(2n+1) {
+	background-color: #CCCCCC44;
+}
+.widget ul.ultimos .categoriaPost span {
+	float: right;
+}

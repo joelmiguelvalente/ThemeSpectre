@@ -33,7 +33,7 @@
                <a class="btn btn-sm btn-success follow_post" onclick="notifica.follow('post', {$tsPost.post_id}, notifica.inPostHandle, $(this).children('span'))"><span class="icons follow_post follow">Seguir Post</span></a>
             </li>
             <li><a href="#" onclick="{if !$tsUser->is_member}registro_load_form(){else}add_favoritos(){/if}; return false" class="btn btn-info btn-sm"><span class="icons agregar_favoritos">Agregar a Favoritos</span></a></li>
-            <li><a href="#" onclick="denuncia.nueva('post',{$tsPost.post_id}, '{$tsPost.post_title}', '{$tsPost.user_name}'); return false;" class="btn btn-error btn-sm"><span class="icons denunciar_post">Denunciar</span></a></li>
+            <li><a href="#" onclick="denuncia.nueva('post', '{$tsPost.post_id}', '{$tsPost.post_title}', '{$tsAutor.user_name}'); return false;" class="btn btn-error btn-sm"><span class="icons denunciar_post">Denunciar</span></a></li>
             {/if}
          </ul>
       </div>

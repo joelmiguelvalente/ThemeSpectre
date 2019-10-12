@@ -1,4 +1,5 @@
 {include file='sections/main_header.tpl'}
+<link rel="stylesheet" href="{$tsConfig.css}/monitor.css">
 <div class="columns">
 	{if $tsAction == ''}
 		<div class="column col-8">

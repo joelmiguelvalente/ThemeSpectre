@@ -6,17 +6,14 @@
     {if $tsData.data}
     <ul class="listado">
         {foreach from=$tsData.data item=u}
-        <li class="clearfix">
-        	<div class="listado-content clearfix">
-        		<div class="listado-avatar">
-        			<a href="{$tsConfig.url}/perfil/{$u.user_name}"><img src="{$tsConfig.url}/files/avatar/{$u.user_id}_50.jpg" width="32" height="32"/></a>
-        		</div>
-        		<div class="txt">
-        			<a href="{$tsConfig.url}/perfil/{$u.user_name}">{$u.user_name}</a><br>
-        			<img src="{$tsConfig.images}/flags/{$u.user_pais|lower}.png"/> <span class="grey">{$u.p_mensaje}</span>
-        		</div>
-        	</div>
-        </li>
+        <div class="tile">
+          <div class="tile-icon">
+            <figure class="avatar avatar-lg"><img src="{$tsConfig.url}/files/avatar/{$u.user_id}_120.jpg" alt="{$u.user_name}"></figure>
+          </div>
+          <div class="tile-content">
+            <p class="tile-title"><a href="{$tsConfig.url}/perfil/{$u.user_name}">{$u.user_name}</a><span style="display: block;"><img src="{$tsConfig.images}/flags/{$u.user_pais|lower}.png"/>{if $u.p_mensaje} | {$u.p_mensaje}{/if}</span></p>
+          </div>
+        </div>
         {/foreach}
         <li class="listado-paginador clearfix">
     		{if $tsData.pages.prev != 0}<a href="#" onclick="perfil.follows('{$tsType}', {$tsData.pages.prev}); return false;" class="anterior-listado floatL">Anterior</a>{/if}
