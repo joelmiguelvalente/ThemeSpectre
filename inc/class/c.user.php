@@ -290,7 +290,7 @@ class tsUser {
 	/*
 		getUserID($tsUsername)
 	*/
-	function getUserID($tsUser){
+	function getUserID($tsUser = NULL){
 	global $tsCore;
 		//
 		$tsUsername = strtolower($tsUser);
@@ -304,7 +304,7 @@ class tsUser {
 	/*
         getUserName($user_id)
     */
-    function getUserName($user_id){
+    function getUserName($user_id = NULL){
 		//
 		$query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT user_name FROM u_miembros WHERE user_id = \''.(int)$user_id.'\' LIMIT 1');
 		$tsUser = db_exec('fetch_assoc', $query);
@@ -318,7 +318,7 @@ class tsUser {
      * @param int
      * @return void
      */
-    public function iFollow($user_id){
+    public function iFollow($user_id = NULL){
         # SIGO A ESTE USUARIO
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT follow_id FROM u_follows WHERE f_id = \''.(int)$user_id.'\' AND f_user = \''.$this->uid.'\' AND f_type = \'1\' LIMIT 1');
 		$data = db_exec('num_rows', $query);
@@ -333,7 +333,7 @@ class tsUser {
      * @return array
      * @info OBTIENE LA INFORMACION DE UN USUARIO PARA UNA VCARD
      */
-    public function getVCard($user_id){
+    public function getVCard($user_id = NULL){
         # GLOBALES
         global $tsCore;
         # LOCALES
@@ -547,6 +547,14 @@ class tsSession {
 
         // Establecemos la cookie
         $this->set_cookie('sid', $this->ID, $this->sess_expiration);
+        /* Actualizado 25/04/2018 */
+        $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT COUNT(session_user_id) as total FROM u_sessions');
+        $data = db_exec('fetch_assoc', $query);
+            if($data['total']>100){
+                $time = time() - 1440*60;
+                db_exec(array(__FILE__, __LINE__), 'query', 'DELETE FROM u_sessions WHERE  session_time < \''.$time.'\' ');
+            }
+        /* Actualizado 25/04/2018 */
     }
 
 	/**

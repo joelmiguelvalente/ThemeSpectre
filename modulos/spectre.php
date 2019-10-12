@@ -8,6 +8,7 @@ if($tsCore->settings['c_recaptcha'] == 0) {
   define('RC_PIK',$tsCore->settings['skey3']);
 }
 
+define('VersionTheme', '1.0');
 /* BUSQUEDA PERSONALIZADA GOOGLE */
 /*
   Para obtener el código https://cse.google.com/
@@ -27,6 +28,8 @@ define('nodeCss',   $tsCore->settings['url'] . '/modulos/css');
 define('Spectrejs', $tsCore->settings['url'] . '/modulos/js/spectre.js');
 define('LogoPng',   $tsCore->settings['url'] . '/modulos/img/favicon.png');
 define('LogoIco',   $tsCore->settings['url'] . '/modulos/img/favicon.ico');
+define('Header',   $tsCore->settings['url'] . '/modulos/img/header.webp');
+
 $array = array(
   nodeCss . '/spectre.min.css?'.time(),
   nodeCss . '/spectre-exp.min.css?'.time(),

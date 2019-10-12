@@ -44,21 +44,15 @@
             echo $json;
 			//--->
 		break;
-		case 'feed-script':
-			//<--- CONSULTAR ACTUALIZACIONES OFICIALES Y VERIFICAR VERSIÓN ACTUAL DE ESTE SCRIPT
-            $json = $tsCore->getUrlContent('https://mozzfirev4x.skn1.com/ApiRest/themes.json?type=script&key='.$key);
-            echo $json;
-			//--->
-		break;
 		case 'feed-version':
 			 /**
              * Versión a 20 de agosto de 2019 *
              * PHPost Risus 1.3.1.000 *
              */
-            $version_now = 'Risus 1.3.1.000';
+            $version_now = 'Risus 1.3.0.000';
             # ACTUALIZAR VERSIÓN
             if($tsCore->settings['version'] != $version_now){
-			    db_exec(array(__FILE__, __LINE__), 'query', 'UPDATE `w_configuracion` SET version = \''.$version_now.'\', version_code = \'risus_1_3_1_000\' WHERE tscript_id = \'1\' LIMIT 1');
+			    db_exec(array(__FILE__, __LINE__), 'query', 'UPDATE `w_configuracion` SET version = \''.$version_now.'\', version_code = \'risus_1_3_0_000\' WHERE tscript_id = \'1\' LIMIT 1');
                 db_exec(array(__FILE__, __LINE__), 'query', 'UPDATE `w_stats` SET stats_time_upgrade = \''.time().'\' WHERE stats_no = \'1\' LIMIT 1');
             }
 			//<---

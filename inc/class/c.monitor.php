@@ -526,13 +526,13 @@ public function setNotificacion($type, $user_id, $obj_user, $obj_uno = 0, $obj_d
                 $oracion['ltit'] = ($this->show_type == 1) ? substr($data['c_body'],0,20).'...' : '';
             break;
 			case 15:
-                $oracion['text'] = 'Recibiste una nueva <span class="qtip" title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/default/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
+                $oracion['text'] = 'Recibiste una nueva <span style="display:inline-block" title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/'.TS_TEMA.'/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
 			break;
 			case 16:
-                $oracion['text'] = 'Tu <a href="'.$site_url.'/posts/'.$data['c_seo'].'/'.$data['post_id'].'/'.$tsCore->setSEO($data['post_title']).'.html" title="'.$data['post_title'].'"><b>post</b></a> tiene una nueva <span class="qtip" title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/default/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
+                $oracion['text'] = 'Tu <a href="'.$site_url.'/posts/'.$data['c_seo'].'/'.$data['post_id'].'/'.$tsCore->setSEO($data['post_title']).'.html" title="'.$data['post_title'].'"><b>post</b></a> tiene una nueva <span title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/'.TS_TEMA.'/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
 			break;
 			case 17:
-                $oracion['text'] = 'Tu <a href="'.$site_url.'/fotos/'.$data['user_name'].'/'.$data['foto_id'].'/'.$tsCore->setSEO($data['f_title']).'.html" title="'.$data['f_title'].'"><b>foto</b></a> tiene una nueva <span class="qtip" title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/default/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
+                $oracion['text'] = 'Tu <a href="'.$site_url.'/fotos/'.$data['user_name'].'/'.$data['foto_id'].'/'.$tsCore->setSEO($data['f_title']).'.html" title="'.$data['f_title'].'"><b>foto</b></a> tiene una nueva <span title="'.$data['m_title'].'"><b>medalla</b> <img src="'.$site_url.'/themes/'.TS_TEMA.'/images/icons/med/'.$data['m_image'].'_16.png"/></span>';
 			break;
         }
         # RETORNAMOS

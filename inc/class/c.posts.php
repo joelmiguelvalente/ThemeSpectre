@@ -370,6 +370,14 @@ class tsPosts {
 			db_exec(array(__FILE__, __LINE__), 'query', 'INSERT INTO w_visitas (`user`, `for`, `type`, `date`, `ip`) VALUES (\''.$tsUser->uid.'\', \''.(int)$post_id.'\', \'2\', \''.time().'\', \''.$_SERVER['REMOTE_ADDR'].'\')');
 			db_exec(array(__FILE__, __LINE__), 'query', 'UPDATE p_posts SET post_hits = post_hits + 1 WHERE post_id = \''.(int)$post_id.'\'');
 		}
+    /* Actualizado 25/04/2018 */
+    $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT COUNT(id) as total FROM w_visitas');
+    $data = db_exec('fetch_assoc', $query);
+       $time = time() - 1440*60;
+        if($data['total']>100){
+            db_exec(array(__FILE__, __LINE__), 'query', 'DELETE FROM w_visitas WHERE  date < \''.$time.'\' ');
+        }
+    /* Actualizado 25/04/2018 */
         // AGREGAMOS A VISITADOS... PORTAL
         if($tsCore->settings['c_allow_portal']){
 		    $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT last_posts_visited FROM u_portal WHERE user_id = \''.$tsUser->uid.'\' LIMIT 1');

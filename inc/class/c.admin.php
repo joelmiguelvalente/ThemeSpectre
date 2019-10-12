@@ -812,7 +812,7 @@ class tsAdmin {
             "png",
             "gif");
         // DONDE... SOLO VAN EN EL TEMA DEFAULT
-        $mydir = opendir("../../themes/default/images/icons/" . $f);
+        $mydir = opendir("../../themes/".TS_TEMA."/images/icons/" . $f);
         // LEEMOS
         while ($file = readdir($mydir))
         {
@@ -1145,6 +1145,15 @@ class tsAdmin {
         $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT u.user_id, u.user_name, s.* FROM u_sessions AS s LEFT JOIN u_miembros AS u ON s.session_user_id = u.user_id ORDER BY s.session_time DESC LIMIT ' .
             $limit);
         //
+        
+        /* Actualizado 25/04/2018 */
+        $query = db_exec(array(__FILE__, __LINE__), 'query', 'SELECT COUNT(session_user_id) as total FROM u_sessions');
+        $data = db_exec('fetch_assoc', $query);
+            if($data['total']>100){
+                $time = time() - 1440*60;
+                db_exec(array(__FILE__, __LINE__), 'query', 'DELETE FROM u_sessions WHERE  session_time < \''.$time.'\' ');
+            }
+        /* Actualizado 25/04/2018 */
         $data['data'] = result_array($query);
 
         // PAGINAS

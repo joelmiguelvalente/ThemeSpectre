@@ -1,0 +1,242 @@
+* {
+	list-style: none;
+}
+.boxy-content h1 {
+	font-weight: 300;
+	font-size: 28px;
+	margin: 0;
+	padding: 2px;
+}
+.phpostAlfa {
+	padding: 30px 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #888;
+	font-size: 2em;
+}
+.column .phpost.pointer h1 {
+	background-color: #EEE;
+	display: block;
+	cursor: pointer;
+}
+.column .phpost.pointer h1 > i {
+	float: right;
+	padding: 0px 10px;
+	line-height: 35px;
+}
+.pp_list {
+	margin: 0;
+	padding: 0;
+}
+.pp_list.hide {
+	display: none;
+}
+.pp_list.show {
+	display: block;
+}
+.newTheme .new_themes_risus {
+	padding: 2px;
+}
+.new_themes_risus:nth-child(2n+1) {
+	background-color: #EEE;
+}
+.new_themes_risus .title small {
+	float: right;
+}
+.new_themes_risus .body, 
+.new_themes_risus .body * {
+	font-size: 11px;
+}
+.column .card {
+	margin-bottom: 10px;
+}
+.column .card .card-header,
+.column .card .card-body {
+	padding: 4px;
+	margin: 0;
+}
+.column .card .card-body p {
+	padding: 2px 6px;
+	margin: 0;
+}
+.boxyadmin .boxy-title h3 {
+	display: block;
+	font-weight: 500;
+	padding: 6px;
+	border-bottom: 2px solid #CCC;
+}
+.boxy-content .mensajes {
+	display: block;
+	text-align: center;
+	padding: 8px;
+	color: #EEE;
+}
+.boxy-content .mensajes.ok {
+	background-color: #288B46
+}
+.boxy-content .mensajes.error {
+	background-color: #B32035
+}
+.boxy-content form fieldset {
+	padding: 10px;
+	margin: 0;
+}
+.boxy-content form fieldset legend {
+	margin-bottom: -20px;
+}
+.boxy-content form fieldset dl {
+	display: grid;
+	grid-template-columns: 220px 1fr;
+	gap: 6px;
+}
+.boxy-content form fieldset dl dt span {
+	display: block;
+}
+.boxy-content form fieldset dl dt span,
+.boxy-content form fieldset dl dt span a {
+	font-weight: 300;
+	font-size: 12px;
+}
+.boxy-content form fieldset dl dt span b {
+	font-weight: 700;
+	font-size: 12px;
+}
+.ads_pub form fieldset dl dd textarea {
+	height: 120px;
+}
+.table tbody .admin_actions a {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	text-decoration: none;
+}
+.table tbody .admin_actions a i {
+	font-size: 26px;
+	padding: 4px;
+	display: inline-block;
+	color: #666;
+}
+.table tbody .admin_actions a.Reactivar i {
+	color: #0BA10B;
+}
+.table tbody .admin_actions a.Suspender i {
+	color: #D00B0B;
+}
+#admin_menu .nav .nav-item a {
+	display: block;
+}
+#c_icon {
+	float: left;
+	margin-right: 4px;
+	margin-top: 2px;
+}
+#med_img {
+	width: 300px;
+}
+#ai_cant {
+	width: 8%;
+	display: inline-block;
+	float: left;
+	margin-right: 6px;
+}
+#ai_cond_user,
+#ai_cond_user_rango,
+#ai_cond_post,
+#ai_cond_foto {
+	width: 200px;
+	display: inline-block;
+}
+/* DETALLES DEL AFILIADO */
+.detail a {
+	display: inline-block;
+}
+.detail a img {
+	width: 100%;
+}
+.detail p {
+	margin: 0;
+	padding: 0;
+}
+.detail p b {
+	font-size: 22px;
+}
+.detail p a b {
+	font-size: 11px;
+	font-weight: 400;
+	margin-top: -6px;
+}
+#ListStats .estadisticasList {
+  	width: 31%;
+  	margin: 6px;
+  	border: 1px solid #CCC;
+}
+#ListStats .estadisticasList h6,
+#ListStats .estadisticasList ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#ListStats .estadisticasList h6 {
+	padding: 4px;
+}
+#ListStats .estadisticasList h6 span {
+	float: right;
+}
+#ListStats .estadisticasList ul li {
+	padding:3px 6px;
+}
+#ListStats .estadisticasList ul li:nth-child(2n+1) {
+	background-color: #EEE;
+}
+#ListStats .estadisticasList ul li b {
+	float: right;
+}
+#cats_orden {
+	width: 550px;
+	margin: 10px auto;
+}
+/* ADMINISTRAR USUARIOS */
+.admin_header {
+	position: relative;
+	padding: 4px;
+}
+.admin_header h1,
+.admin_header h1 strong {
+	font-size: 22px;
+}
+.admin_header select {
+	width: 200px;
+	position: absolute;
+	top: 1px;
+	right: 4px;
+}
+.edit_user legend {
+	padding: 10px 0;
+	text-transform: uppercase;
+	text-align: center;
+}
+.edit_user h2.active {
+	background-color: #EEE;
+	padding: 4px;
+	font-weight: 400;
+	font-size: 18px;
+	margin: 10px 0 0 0;
+}
+.edit_user .form-group .form-checkbox small {
+	display: block;
+}
+.edit_user .divider-vert {
+	border: 0;
+	margin: 20px 0 -20px 0;
+	border-top: .1em solid #CCC;
+	height: 2px;
+}
+.edit_user .divider-vert[data-content]::after {
+	transform: translate(-2.1em, -2.1em);
+	margin: 0 auto!important;
+	padding: 0px 10px;
+}
+.edit_user .divider-vert[data-content]::before {
+	border: 0;
+}

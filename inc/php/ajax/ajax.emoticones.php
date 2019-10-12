@@ -126,6 +126,6 @@
 );
     // 
     foreach($emoticones as $key => $emo){
-        echo '<a smile="'.$emo[0].'" href="#"><img src="'.$tsCore->settings['default'].'/images/smiles/'.$emo[1].'" style="margin:auto 2px;"/></a>';
+        echo '<a smile="'.$emo[0].'" href="#"><img src="'.$tsCore->settings['images'].'/smiles/'.$emo[1].'" style="margin:auto 2px;"/></a>';
     }
 ?>
