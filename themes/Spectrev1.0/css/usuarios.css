@@ -1,0 +1,59 @@
+.usuarios {
+	position: relative;
+	margin-bottom: 10px;
+	height: 250px;
+	overflow: hidden;
+}
+.usuarios .avatar {
+	text-align: center;
+	width: 120px;
+	height: 120px;
+	margin: 10px auto;
+}
+.usuarios .avatar img {
+	width: 120px;
+	height: 120px;
+}
+.usuarios .card-body {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 250px;
+	top: -250px;
+	z-index: 9;
+	background-color: #FFF;
+	transition: all .3s ease-in;
+	padding: 0;
+}
+.usuarios:hover .card-body {
+	top: 0;
+	height: 100%;
+	padding: 8px;
+	transition: all .3s ease-in;
+}
+.usuarios .card-body {
+	margin: 0;
+	padding: 0;
+}
+.usuarios .card-body .mensajes_user {
+	display: block;
+	padding: 6px;
+	text-align: center;
+	color: #888;
+}
+.usuarios .card-body .stats {
+	text-align: left;
+}
+.usuarios .card-body .stats span,
+.usuarios .card-body .stats span strong {
+	font-size: 11px;
+	display: block;
+	padding: 2px 4px;
+}
+.usuarios .card-body .stats span strong {
+	display: inline-block;
+}
+.usuarios .card-body .btn {
+	display: block;
+}
